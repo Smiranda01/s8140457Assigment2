@@ -3,6 +3,7 @@
 androidGradlePlugin = "8.6.0"
 kotlin = "2.0.0"
 hilt = "2.51.1"
+moshi = "1.15.1"
 
 # --- Library Versions ---
 coreKtx = "1.12.0"
@@ -17,7 +18,7 @@ espressoCore = "3.5.1"
 # --- Core & Lifecycle ---
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
 # --- Compose ---
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }

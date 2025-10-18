@@ -11,6 +11,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
+// ADD THESE IMPORTS
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+
 private const val BASE_URL = "https://nit3213api.onrender.com/"
 
 @Module
@@ -24,12 +28,18 @@ object NetworkModule {
     }
 
     @Provides @Singleton
-    fun provideRetrofit(client: OkHttpClient): Retrofit =
-        Retrofit.Builder()
+    fun provideRetrofit(client: OkHttpClient): Retrofit {
+        // BUILD MOSHI WITH THE KOTLIN ADAPTER
+        val moshi = Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
+            .build()
+
+        return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
+    }
 
     @Provides @Singleton
     fun provideApi(retrofit: Retrofit): ApiService =
