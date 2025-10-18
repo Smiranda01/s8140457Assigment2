@@ -43,3 +43,14 @@ app/
     ],
     "entityTotal": 7
   }
+
+#How to run
+- Android Studio Giraffe+ (AGP 8.6.x) with compileSdk 35.
+- Open the project → Sync Gradle.
+- Run on an emulator (e.g., Medium Phone API 24 or later).
+- Login with:
+- Username: Santiago
+- Password: 8140457
+
+You should see the Art list after login.
+  
