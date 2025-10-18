@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">s8140457_assignment2</string>
+    <string name="art_subtitle">%1$s • %2$s • %3$s</string>
 </resources>
