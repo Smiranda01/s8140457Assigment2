@@ -8,19 +8,6 @@ Stack: Kotlin, MVVM, Hilt DI, Retrofit/Moshi, Coroutines/LiveData, Navigation (S
 - **Dashboard** → GET `/dashboard/art` (requires `keypass` from login)  
 - **Details** → (wired via Safe Args; shows full item info)
 
-## Architecture
-app/
-├─ data/
-│ ├─ remote/ # Retrofit ApiService + models (Entity, LoginRequest, LoginResponse)
-│ └─ repository/ # DashboardRepository + Result<T> sealed class
-├─ di/ Hilt modules (NetworkModule, RepositoryModule)
-├─ ui/
-│ ├─ login/ # LoginFragment + LoginViewModel
-│ ├─ dashboard/ # DashboardFragment + DashboardViewModel (+ in-file EntityAdapter)
-│ └─ details/ # DetailsFragment
-├─ App.kt # @HiltAndroidApp
-└─ MainActivity.kt # @AndroidEntryPoint, NavHost
-
 ## Tech
 - **Kotlin** + Coroutines/LiveData
 - **Hilt** for dependency injection
